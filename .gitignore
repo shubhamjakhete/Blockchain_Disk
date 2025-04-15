@@ -1,0 +1,43 @@
+# Dependency directories
+node_modules/
+.env
+
+# Build output
+build/
+dist/
+artifacts/
+cache/
+
+# Hardhat specific
+hardhat.log
+typechain/
+coverage/
+coverage.json
+
+# Truffle specific
+*.log
+*.pid
+truffle-config.js~
+migrations.log
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Testing & temp
+*.tsbuildinfo
+*.tgz
+.nyc_output/
+test/temp/
+
+# React
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Yarn
+.yarn/
+.pnp.*
