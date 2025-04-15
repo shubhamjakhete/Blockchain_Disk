@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import web3 from '../ethereum/web3'; // Import your Web3 instance
-import abi from '../ethereum/abi'; // Import ABI and contract address
+import systemabi from '../ethereum/systemabi'; // Import ABI and contract address
 import contractAddress from '../ethereum/contractAddress';
 import {Router} from '../routes';
 
@@ -20,21 +20,28 @@ const RentalSpace = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Convert input values to the required data types (uint256 in this case)
-    const space = parseInt(volume); // You can add validation here
+    const space = parseInt(volume);
     const rentalPrice = parseInt(price);
+    const duration = 1; // hardcoded
+    
+    
+    // Convert input values to the required data types (uint256 in this case)
+    //const space = parseInt(volume); // You can add validation here
+    //const rentalPrice = parseInt(price);
 
     // Get the currently selected Ethereum account (e.g., from MetaMask)
     const accounts = await web3.eth.getAccounts();
     const account = accounts[0]; // Assuming you want to use the first account
 
     // Connect to your contract using Web3
-    const contract = new web3.eth.Contract(abi, contractAddress);
+    const contract = new web3.eth.Contract(systemabi, contractAddress);
+    const cost = space * rentalPrice * duration * 3600;
 
     try {
       // Send a transaction to create the rental system
-      await contract.methods.createRentalSystem(space, rentalPrice).send({
+      await contract.methods.createRental(space, duration).send({
         from: account,
+        value: cost,
       });
       Router.pushRoute('/');
       // Optionally, you can provide user feedback about the successful creation

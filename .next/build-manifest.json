@@ -39,11 +39,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/buyspace/RentalSystemInfo.js"
-    ],
-    "/rentspace": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/rentspace.js"
     ]
   },
   "ampFirstPages": []
