@@ -3,7 +3,7 @@ const Web3 = require("web3");
 const compiledRentalSystem = require("./build/DiskSpaceRentalSystem.json"); // 👈 not factory
 
 const provider = new HDWalletProvider(
-  ["b5865b862243ec7fe0845eefe82ee9dd13a2297bf3710e87428e5c582a0a0677"], // Private key from Ganache CLI (NO "0x")
+  ["0ea839f6c626a17339375b48b7644e21e8c4eb8b8553cfcdbc7e2d22f957be38"], // ✅ from Ganache CLI
   "http://127.0.0.1:8545"
 );
 

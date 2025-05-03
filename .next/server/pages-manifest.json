@@ -1,0 +1,7 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/buyspace": "pages/buyspace.js",
+  "/buyspace/RentalSystemInfo": "pages/buyspace/RentalSystemInfo.js"
+}
