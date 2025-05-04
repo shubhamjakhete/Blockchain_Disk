@@ -7,9 +7,9 @@ pragma solidity ^0.8.21;
 contract DiskSpaceRentalSystemFactory {
     address[] public deployedRentalSystems;
 
-    function createRentalSystem(uint256 _initialSpace, uint256 _initialPrice) public {
-        address newRentalSystem = address(new DiskSpaceRentalSystem(_initialSpace, _initialPrice, msg.sender));
-        deployedRentalSystems.push(newRentalSystem);
+    function createRentalSystem(uint _initialSpace, uint _initialPrice) public {
+        DiskSpaceRentalSystem newSystem = new DiskSpaceRentalSystem(_initialSpace, _initialPrice);
+        deployedRentalSystems.push(address(newSystem));
     }
 
     function getDeployedRentalSystems() public view returns (address[] memory) {
@@ -41,8 +41,8 @@ contract DiskSpaceRentalSystem {
         _;
     }
 
-    constructor(uint256 _initialSpace, uint256 _initialPrice, address _creator) {
-        owner = _creator;
+    constructor(uint256 _initialSpace, uint256 _initialPrice) {
+        owner = msg.sender;
         totalDiskSpace = _initialSpace;
         availableDiskSpace = _initialSpace;
         rentalPrice = _initialPrice;

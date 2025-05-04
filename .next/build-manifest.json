@@ -30,10 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/buyspace.js"
     ],
-    "/buyspace/RentalSystemInfo": [
+    "/rentspace": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/buyspace/RentalSystemInfo.js"
+      "static/chunks/pages/rentspace.js"
     ]
   },
   "ampFirstPages": []
